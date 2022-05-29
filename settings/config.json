@@ -3,5 +3,8 @@
     "prefix": "$",
     "embed": {
         "color": "#4D6FFF"
+    },
+     "blacklisted_terms": {
+        "terms": ["Walker", "fuck"]
     }
 }
