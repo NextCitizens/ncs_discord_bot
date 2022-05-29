@@ -11,6 +11,15 @@ client.on("messageCreate", async (message) => {
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const cmd = args.shift().toLowerCase();
 
+    for(i in config.blacklisted_terms.terms) {
+        if (message.content.toLowerCase().includes(config.blacklisted_terms.terms[i].toLowerCase())) {
+            message.delete();
+            message.channel.send(`${message.author} you are not allowed to use that word.`);
+            use_blacklisted_term = true;
+            return;
+        }
+    }
+    
     const command =
         client.commands.get(cmd.toLowerCase()) ||
         client.commands.find(
