@@ -16,7 +16,6 @@ client.on("messageCreate", async (message) => {
             message.delete();
             message.channel.send(`${message.author} you are not allowed to use that word.`);
             use_blacklisted_term = true;
-            return;
         }
     }
     
