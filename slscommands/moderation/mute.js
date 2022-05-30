@@ -41,6 +41,7 @@ module.exports = {
         const convertedTime = ms(duration);
         const reason = interaction.options.getString('reason');
 
+        if (convertedTime > 1000 * 60 * 60 * 24 * 28) return interaction.editReply('The duration must be less than 28 days!')
         if (!target.moderatable) return interaction.editReply('This user cannot be muted!');
         if (!convertedTime) return interaction.editReply('Specify a valid duration!')
 
