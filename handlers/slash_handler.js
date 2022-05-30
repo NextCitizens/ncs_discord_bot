@@ -16,7 +16,7 @@ module.exports = (client) => {
                     arrayOfSlashCommands.push(pull);
                     command++;
                 } else {
-                    console.log(`${cmds} Cette commande n'est pas prête !`);
+                    console.log(`${cmds} This command isn't ready !`);
                     continue;
                 }
                 if (pull.aliases && Array.isArray(pull.aliases))
@@ -33,7 +33,7 @@ module.exports = (client) => {
             });
         });
         console.log(
-            `\x1b[32m[SLAH_COMMANDS]\x1b[33m ${command} slash commandes chargé !`
+            `\x1b[32m[SLAH_COMMANDS]\x1b[33m ${command} slash commands loaded !`
         );
     } catch (e) {
         console.log(e.message);

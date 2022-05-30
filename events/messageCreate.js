@@ -24,7 +24,7 @@ client.on("messageCreate", async (message) => {
                     new MessageEmbed()
                         .setColor(config.embed.color)
                         .setDescription(
-                            `❌ Tu n'as pas la permission **${command.permissions}** d'utiliser la commande **${command.name}.** `
+                            `❌ You don't have the permissions **${command.permissions}** to use this command **${command.name}.** `
                         ),
                 ],
             });

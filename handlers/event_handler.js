@@ -13,7 +13,7 @@ module.exports = (client) => {
                     client.events.set(pull.name, pull);
                 }
             }
-            console.log(`\x1b[32m[HANDLERS]\x1b[33m ${file} chargé !`);
+            console.log(`\x1b[32m[HANDLERS]\x1b[33m ${file} loaded !`);
         });
     } catch (e) {
         console.log(e.message);

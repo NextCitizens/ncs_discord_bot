@@ -14,7 +14,7 @@ module.exports = (client) => {
                     client.commands.set(pull.name, pull);
                     command++;
                 } else {
-                    console.log(`${cmds} Cette commande n'est pas prête !`);
+                    console.log(`${cmds} This command isn't ready !`);
                     continue;
                 }
                 if (pull.aliases && Array.isArray(pull.aliases))
@@ -23,7 +23,7 @@ module.exports = (client) => {
                     );
             }
         });
-        console.log(`\x1b[32m[COMMANDS]\x1b[33m ${command} commandes chargé !`);
+        console.log(`\x1b[32m[COMMANDS]\x1b[33m ${command} commands loaded !`);
     } catch (e) {
         console.log(e.message);
     }

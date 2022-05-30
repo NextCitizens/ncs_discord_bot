@@ -11,13 +11,13 @@ const wait = require("util").promisify(setTimeout);
 
 module.exports = {
     name: "clear",
-    description: "Supprimer des messages dans le channel !",
+    description: "To delete some messages in channels.",
     permissions: [""],
     type: 1,
     options: [
         {
-            name: "nombre",
-            description: "indique ton nombre",
+            name: "number",
+            description: "Give the number of message deleted",
             required: true,
             type: 3,
         },
@@ -32,13 +32,13 @@ module.exports = {
             args > 99 ||
             args < 2
         )
-            return interaction.followUp("Le nombre est invalide");
+            return interaction.followUp("The number is incorect !");
         let channel = await interaction.channel
             .bulkDelete(Number(args) + 1)
             .catch((err) => {});
         if (!channel) return;
         let msg = await interaction.channel.send(
-            `✅ J'ai supprimer ${count} messages.`
+            `✅ I have deleted ${count} messages.`
         );
     },
 };

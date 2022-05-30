@@ -9,7 +9,7 @@ client.on("interactionCreate", async (interaction) => {
         const cmd = client.slashCommands.get(interaction.commandName);
         if (!cmd)
             return interaction.followUp({
-                content: "Une erreur est survenue.",
+                content: "An error has occurred.",
             });
 
         const args = [];
@@ -33,7 +33,7 @@ client.on("interactionCreate", async (interaction) => {
                         new MessageEmbed()
                             .setColor(config.embed.color)
                             .setDescription(
-                                `❌ Tu n'as pas la permission **${cmd.permissions}** d'utiliser la commande **${cmd.name}.** `
+                                `❌ You don't have the permissions **${cmd.permissions}** to use this command **${cmd.name}.** `
                             ),
                     ],
                 });

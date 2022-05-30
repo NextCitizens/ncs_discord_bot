@@ -3,12 +3,12 @@ const wait = require("util").promisify(setTimeout);
 
 module.exports = {
     name: "ping",
-    description: "Voir la latence du bot.",
+    description: "Check the ping of the bot.",
     permissions: ["SEND_MESSAGES", "MANAGE_MESSAGES"],
 
     run: async (client, interaction, args) => {
         await interaction.editReply(
-            `🏓 La latence du bot est ${Math.round(client.ws.ping)}ms.`
+            `🏓 The ping of the bot is at ${Math.round(client.ws.ping)}ms.`
         );
     },
 };

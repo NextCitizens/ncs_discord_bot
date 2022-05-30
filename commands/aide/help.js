@@ -12,7 +12,7 @@ module.exports = {
     name: "help",
     aliases: ["h"],
     permissions: ["SEND_MESSAGES"],
-    description: "Une commande pour te guider.",
+    description: "A command to guide you.",
 
     run: async (client, message, args, prefix) => {
         try {
@@ -46,7 +46,7 @@ module.exports = {
                     .setTitle(`Help Menu - Prefix: \`${prefix}\``)
                     .addFields(categories)
                     .setFooter(
-                        `Demandé par ${message.author.tag}`,
+                        `Asked by ${message.author.tag}`,
                         message.author.displayAvatarURL({
                             dynamic: true,
                         })
@@ -73,7 +73,7 @@ module.exports = {
                     const cmds = commands.map((command) => {
                         let file = require(`../../commands/${dir}/${command}`);
 
-                        if (!file.name) return "Pas de nom pour la commande.";
+                        if (!file.name) return "No name for this command.";
 
                         let name = file.name.replace(".js", "");
 
@@ -93,10 +93,10 @@ module.exports = {
                         dota = {
                             name: `${
                                 cmds.length === 0
-                                    ? "En developpement."
+                                    ? "Currently in development"
                                     : co.cname
                             }`,
-                            value: co.des ? co.des : "Aucune description.",
+                            value: co.des ? co.des : "No description.",
                             inline: true,
                         };
                         catts.push(dota);
@@ -122,7 +122,7 @@ module.exports = {
                             }**`
                         )
                         .setDescription(
-                            `Utilise \`${prefix}help\` pour avoir plus d'informations sur une commande. \nPar exemple: \`${prefix}help ping\`.\n\n`
+                            `Use \`${prefix}help\` to have more informations about the command. \n For example: \`${prefix}help ping\`.\n\n`
                         )
                         .addFields(catts)
                         .setColor(config.embed.color);
@@ -133,25 +133,25 @@ module.exports = {
                 if (!command) {
                     const embed = new MessageEmbed()
                         .setTitle(
-                            `Commande introuvable ! \`${prefix}help\` pour avoir toutes les commandes.`
+                            `Command not found ! \`${prefix}help\` to have the list of all the commands.`
                         )
                         .setColor("RED");
                     return message.channel.send({ embeds: [embed] });
                 }
 
                 const embed = new MessageEmbed()
-                    .setTitle("Help commande:")
+                    .setTitle("Help commands:")
                     .addField(
                         "Command:",
                         command.name
                             ? `\`${command.name}\``
-                            : "Pas de nom pour la commande."
+                            : "No name for this command."
                     )
                     .addField(
                         "Aliases:",
                         command.aliases
                             ? `\`${command.aliases.join("` `")}\``
-                            : "Aucun alias."
+                            : "No alias."
                     )
                     .addField(
                         "Usage:",
@@ -163,10 +163,10 @@ module.exports = {
                         "Description:",
                         command.description
                             ? command.description
-                            : "Aucune description."
+                            : "No description."
                     )
                     .setFooter(
-                        `Demandé par ${message.author.tag}`,
+                        `Asked by ${message.author.tag}`,
                         message.author.displayAvatarURL({
                             dynamic: true,
                         })
