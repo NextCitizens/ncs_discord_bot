@@ -5,9 +5,8 @@ const { Message, Client, MessageActionRow, MessageButton, MessageSelectMenu} = r
 
 module.exports = {
     name: "info",
-    aliases: ["i"],
     permissions: ["SEND_MESSAGES", "MANAGE_MESSAGES"],
-    description: "",
+    description: "redirection vers different lien",
 
     run: async (client, message, args) => {
         const row = new MessageActionRow()
