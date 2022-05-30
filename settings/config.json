@@ -1,7 +1,6 @@
 {
-    "token": "",
-    "prefix": "$",
-    "embed": {
-        "color": "#4D6FFF"
-    }
+  "prefix": "$",
+  "embed": {
+    "color": "#4D6FFF"
+  }
 }
