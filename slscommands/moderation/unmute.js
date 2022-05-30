@@ -1,14 +1,3 @@
-const {
-    Client,
-    CommandInteraction,
-    MessageEmbed,
-    MessageActionRow,
-    MessageButton,
-    Message,
-} = require("discord.js");
-const wait = require("util").promisify(setTimeout);
-const ms = require('ms');
-
 module.exports = {
     name: "unmute",
     description: "Unmute a user!",
