@@ -13,7 +13,16 @@ const client = new Client({
     repliedUser: true,
   },
   partials: ["MESSAGE", "CHANNEL", "REACTION"],
-  intents: 32767,
+  intents: [
+    "GUILDS",
+    "GUILD_MEMBERS",
+    "GUILD_BANS",
+    "GUILD_EMOJIS_AND_STICKERS",
+    "GUILD_VOICE_STATES",
+    "GUILD_MESSAGES",
+    "GUILD_MESSAGE_REACTIONS",
+    "DIRECT_MESSAGES",
+  ],
 });
 module.exports = client;
 
