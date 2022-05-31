@@ -122,7 +122,7 @@ module.exports = {
                             }**`
                         )
                         .setDescription(
-                            `Use \`${prefix}help\` to have more informations about the command. \n For example: \`${prefix}help ping\`.\n\n`
+                          `Use \`${prefix}help\` to have more informations about the command. \n For example: \`${prefix}help ping\`.\n\n`
                         )
                         .addFields(catts)
                         .setColor(config.embed.color);
