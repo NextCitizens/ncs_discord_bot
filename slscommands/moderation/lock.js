@@ -24,7 +24,6 @@ module.exports = {
             .setColor('#FF0000')
             .setDescription(`🔒 The channel has been locked for ${role}`);
     
-        await interaction.editReply({ embeds: [embed], ephemeral: false });
-        // await interaction.editReply({ content: `Channel lock for : ${role}`, ephemeral: false });
+        await interaction.editReply({ embeds: [embed] });
     },
 };
