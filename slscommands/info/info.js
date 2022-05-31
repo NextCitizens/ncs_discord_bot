@@ -36,7 +36,11 @@ module.exports = {
 
 
 
-    await message.channel.send({ content: `Voici différentes informartion du ncs core` , components: [row] });
+
+      await interaction.followUp({
+      content: "Voici différentes informartion du ncs core",
+      components: [row],
+    });
 
     },
 
