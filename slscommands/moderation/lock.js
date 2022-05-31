@@ -16,6 +16,8 @@ module.exports = {
     run: async (client, interaction, args) => {
         const role = interaction.options.getRole('role');
 
+        if(role.rawPosition > interaction.guild.me.roles.botRole.rawPosition) return interaction.editReply('The bot cannot lock the channel for this role!');
+
         await interaction.channel.permissionOverwrites.edit(`${role.id}`, { SEND_MESSAGES: false });
 
         const embed = new MessageEmbed()
