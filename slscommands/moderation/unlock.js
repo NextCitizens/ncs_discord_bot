@@ -24,7 +24,6 @@ module.exports = {
             .setColor('#2ECC71')
             .setDescription(`🔓 The channel has been unlocked for ${role}`);
     
-        await interaction.editReply({ embeds: [embed], ephemeral: false });
-        //await interaction.editReply({ content: `Channel unlock for : ${role}`, ephemeral: false });
+        await interaction.editReply({ embeds: [embed] });
     },
 };
