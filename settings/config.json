@@ -4,7 +4,8 @@
     "color": "#4D6FFF"
   },
   "channelMessagejoin": "",
-  "channelMessageleave": "",
+  "channelMessageleav": ""
+  },
   "roles": [
     {
       "label": "Test role 1",
