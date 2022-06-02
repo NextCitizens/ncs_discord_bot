@@ -34,3 +34,5 @@ client.categories = fs.readdirSync("./commands/");
 });
 
 client.login(process.env.TOKEN);
+
+

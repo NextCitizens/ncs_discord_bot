@@ -5,4 +5,26 @@
   },
   "channelMessagejoin": "",
   "channelMessageleav": ""
+<<<<<<< HEAD
 }
+=======
+  },
+  "roles": [
+    {
+      "label": "Test role 1",
+      "description": "Add role 1",
+      "value": "ROLE_ID"
+    },
+    {
+      "label": "Test role 2",
+      "description": "Add role 2",
+      "value": "ROLE_ID_2"
+    },
+    {
+      "label": "Test role 2",
+      "description": "Add role 1",
+      "value": "ROLE_ID_3"
+    }
+  ]
+}
+>>>>>>> 4fe63b7d07fdb3704d17326e53722b6db19c0a9b
