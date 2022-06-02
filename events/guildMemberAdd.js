@@ -1,4 +1,4 @@
-const { MessageEmbed, MessageAttachment } = require('discord.js');
+const { MessageAttachment } = require('discord.js');
 const client = require("..");
 const config = require("../settings/config.json");
 const Canvas = require("canvas");
@@ -34,14 +34,8 @@ client.on("guildMemberAdd", async member => {
     const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
     context.drawImage(avatar, 65, canvas.height / 2 - 250, 500, 500);
     const attachmentjoin = new MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
-    
-    const embedjoin = new MessageEmbed()
-    .setColor("GREEN")
-    .setTitle(`Welcome to ${member.guild.name}, ${member.user.username}!`)
-    .setDescription(`Join on : <t:${parseInt(member.joinedTimestamp / 1000)}:f> (<t:${parseInt(member.joinedTimestamp / 1000)}:R>)`)
-    .setImage("attachment://welcome-image.png")
 
     member.guild.channels.fetch(config.channelMessagejoin)
-     .then((channel) => channel.send({ embeds:[embedjoin], files: [attachmentjoin] }) )
+     .then((channel) => channel.send({ content:`Welcome to ${member.guild.name}, ${member.user}!`, files: [attachmentjoin] }) )
      .catch(console.error);
 });

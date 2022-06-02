@@ -1,4 +1,4 @@
-const { MessageEmbed, MessageAttachment } = require('discord.js');
+const { MessageAttachment } = require('discord.js');
 const client = require("..");
 const config = require("../settings/config.json");
 const Canvas = require("canvas");
@@ -34,14 +34,8 @@ client.on("guildMemberRemove", async member => {
     const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
     context.drawImage(avatar, 65, canvas.height / 2 - 250, 500, 500);
     const attachmentleav = new MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
-    
-    const embedleav = new MessageEmbed()
-    .setColor("RED")
-    .setTitle(`Goodbye ${member.user.username}!`)
-    .setDescription(`Leav on : <t:${parseInt(Date.now() / 1000)}:f> (<t:${parseInt(Date.now() / 1000)}:R>)`)
-    .setImage("attachment://welcome-image.png")
 
-    member.guild.channels.fetch(config.channelMessageleav)
-     .then((channel) => channel.send({ embeds:[embedleav], files: [attachmentleav] }) )
+     member.guild.channels.fetch(config.channelMessageleav)
+     .then((channel) => channel.send({ content:`Goodbye ${member.user}!`, files: [attachmentleav] }) )
      .catch(console.error);
 });
