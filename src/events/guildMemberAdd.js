@@ -1,6 +1,6 @@
 const { MessageAttachment } = require('discord.js');
 const client = require('..');
-const config = require('../../config.json');
+const config = require('../../config.exemple.json');
 const Canvas = require('canvas');
 
 client.on('guildMemberAdd', async (member) => {

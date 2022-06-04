@@ -3,9 +3,9 @@ const fs = require('fs');
 module.exports = (client) => {
   try {
     let command = 0;
-    fs.readdirSync('../commands').forEach((cmd) => {
+    fs.readdirSync('src/commands').forEach((cmd) => {
       const commands = fs
-          .readdirSync(`../commands/${cmd}/`)
+          .readdirSync(`src/commands/${cmd}/`)
           .filter((file) => file.endsWith('.js'));
       for (cmds of commands) {
         const pull = require(`../commands/${cmd}/${cmds}`);

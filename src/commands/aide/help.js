@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js');
-const config = require('../../settings/config.json');
+const config = require('../../../config.exemple.json');
 const { readdirSync } = require('fs');
 
 module.exports = {
@@ -65,7 +65,7 @@ module.exports = {
           ).filter((file) => file.endsWith('.js'));
 
           const cmds = commands.map((command) => {
-            const file = require(`../../commands/${dir}/${command}`);
+            const file = require(`src/commands/${dir}/${command}`);
 
             if (!file.name) return 'No name for this command.';
 

@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 const client = require('..');
-const config = require('../settings/config.json');
+const config = require('../../config.exemple.json');
 
 client.on('interactionCreate', async (interaction) => {
   if (interaction.isCommand()) {

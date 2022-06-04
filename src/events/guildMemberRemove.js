@@ -1,6 +1,6 @@
 const { MessageAttachment } = require('discord.js');
 const client = require('../index');
-const config = require('../../config.json');
+const config = require('../../config.exemple.json');
 const Canvas = require('canvas');
 
 client.on('guildMemberRemove', async (member) => {

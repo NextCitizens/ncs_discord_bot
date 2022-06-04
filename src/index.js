@@ -24,7 +24,7 @@ client.aliases = new Collection();
 client.events = new Collection();
 client.cooldowns = new Collection();
 client.slashCommands = new Collection();
-client.categories = fs.readdirSync('./commands/');
+client.categories = fs.readdirSync('src/commands/');
 
 ['command_handler', 'event_handler', 'slash_handler'].forEach((handler) => {
   require(`./handlers/${handler}`)(client);
