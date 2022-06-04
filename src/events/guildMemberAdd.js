@@ -8,7 +8,7 @@ client.on('guildMemberAdd', async (member) => {
 
   const canvas = Canvas.createCanvas(1772, 633);
   const context = canvas.getContext('2d');
-  const background = await Canvas.loadImage(`../img/welcome.png`);
+  const background = await Canvas.loadImage(`src/img/welcome.png`);
 
   context.drawImage(background, 0, 0, canvas.width, canvas.height);
   context.strokeStyle = '#f2f2f2';
