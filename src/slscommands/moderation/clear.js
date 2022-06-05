@@ -25,7 +25,6 @@ module.exports = {
 
   run: async (client, interaction, args) => {
     const number = interaction.options.getNumber('number');
-    if (number > 99 || number < 2) return interaction.reply('Number must not exceed 100 and must not lower 0!');
     const target = interaction.options.getMember('target');
 
     const messageToDelet = await interaction.channel.messages.fetch();
