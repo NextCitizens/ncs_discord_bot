@@ -1,5 +1,6 @@
 module.exports = {
   name: 'ping',
+  category: 'info',
   description: 'Check the ping of the bot.',
   permissions: ['SEND_MESSAGES', 'MANAGE_MESSAGES'],
   usage: '/ping',

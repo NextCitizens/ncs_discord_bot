@@ -2,6 +2,7 @@ const ms = require('ms');
 
 module.exports = {
   name: 'mute',
+  category: 'moderation',
   description: 'Mute a user for a duration with a reason!',
   permissions: ['MODERATE_MEMBERS'],
   usage: '/mute [user] [reason]',

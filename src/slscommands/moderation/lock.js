@@ -2,6 +2,7 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = {
   name: 'lock',
+  category: 'moderation',
   description: 'Lock a channel for a role!',
   permissions: ['MANAGE_CHANNELS'],
   usage: '/lock [role]',

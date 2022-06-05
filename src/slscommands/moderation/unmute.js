@@ -1,5 +1,6 @@
 module.exports = {
   name: 'unmute',
+  category: 'moderation',
   description: 'Unmute a user!',
   permissions: ['MODERATE_MEMBERS'],
   usage: '/unmute [user]',

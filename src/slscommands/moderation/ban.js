@@ -1,6 +1,7 @@
 
 module.exports = {
   name: 'ban',
+  category: 'moderation',
   description: 'This command is to ban people.',
   permissions: ['BAN_MEMBERS'],
   usage: '/ban [user] [reason]',
