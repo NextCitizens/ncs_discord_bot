@@ -11,14 +11,15 @@ module.exports = {
   exemples: ['/help ping'],
   options: [
     {
-      name: 'commande',
-      description: 'specify commande',
+      name: 'command',
+      description: 'specify command',
       required: false,
       type: 'STRING',
     },
   ],
+
   run: async (client, interaction, args) => {
-    const pullName = interaction.options.getString('commande');
+    const pullName = interaction.options.getString('command');
     if (!pullName) {
       const noArgsEmbed = new MessageEmbed()
           .setColor('RED')
@@ -31,14 +32,11 @@ module.exports = {
             `\`${client.slashCommands.filter((pull) => pull.category == category.toLocaleLowerCase()).map((pull) => pull.name).join(', ')}\``,
         );
       }
-
       return interaction.reply({ embeds: [noArgsEmbed], ephemeral: true });
     }
 
     const pull = client.slashCommands.get(pullName);
     if (!pull) return interaction.reply({ content: 'This command doesn\'t exist!', ephemeral: true });
-
-
     const embed = new MessageEmbed()
         .setColor('RED')
         .setTitle(`Help command: ${pull.name}`)
