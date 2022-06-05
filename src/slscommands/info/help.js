@@ -36,18 +36,24 @@ module.exports = {
     }
 
     const pull = client.slashCommands.get(pullName);
-    if (!pull) return interaction.reply({ content: 'This command doesn\'t exist!', ephemeral: true });
+    if (!pull) return interaction.reply({ content: 'This command doesn\'t exist!' });
+
     const embed = new MessageEmbed()
+        .setAuthor({ name: `${interaction.user.username}`, iconURL: `${interaction.user.displayAvatarURL()}` })
         .setColor('RED')
         .setTitle(`Help command: ${pull.name}`)
+        .setDescription(`
+        **Description:** ${pull.description ? pull.description : contextDescription[`${pull.name}`]} 
+        **Reminder:** '[] = required option | <> = optional option\nDon\'t include these characters -> [] dand <> in your commands.
+        `)
+        .setThumbnail()
         .addFields(
-            { name: 'Category:', value: `${pull.category}`, inline: true },
-            { name: 'Description:', value: `${pull.description ? pull.description : contextDescription[`${pull.name}`]}`, inline: true },
-            { name: 'Permissions:', value: `${pull.permissions.join(', ')}`, inline: true },
-            { name: 'Usage:', value: `\`${pull.usage}\``, inline: true },
-            { name: 'Exemple:', value: `\`${pull.exemples.join(', ')}\``, inline: true },
+            { name: 'Category', value: `${pull.category}` },
+            { name: 'Permissions', value: `${pull.permissions.join(', ')}` },
+            { name: 'Usage', value: `${pull.usage}` },
+            { name: 'Exemple', value: `${pull.exemples.join(', ')}` },
         )
-        .addField('\ninformation: ', '[] = required option | <> = optional option\nDon\'t include these characters -> [] dand <> in your commands.');
+        .setFooter({ text: `${client.user.username}`, iconURL: `${client.user.displayAvatarURL()}` });
     return interaction.reply({ embeds: [embed] });
   },
 };
