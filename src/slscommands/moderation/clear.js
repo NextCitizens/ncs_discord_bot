@@ -1,7 +1,10 @@
 module.exports = {
   name: 'clear',
+  category: 'moderation',
   description: 'To delete some messages in channels.',
   permissions: ['MANAGE_MESSAGES'],
+  usage: 'clear [number] <@user#1234>',
+  exemples: ['ban @user#1234 spamming'],
   type: 1,
   options: [
     {
@@ -9,6 +12,8 @@ module.exports = {
       description: 'Give the number of message deleted.',
       required: true,
       type: 'NUMBER',
+      min_value: 1,
+      max_value: 100,
     },
     {
       name: 'target',
@@ -33,12 +38,12 @@ module.exports = {
           filterCibleMessages.push(msg); i++;
         }
       });
-      await interaction.channel.bulkDelete(filterCibleMessages, true).then((messages) => {
-        interaction.channel.send(`${messages.size} message from ${target}, has been deleted!`);
+      interaction.channel.bulkDelete(number+1, filterCibleMessages, true).then((messages) => {
+        interaction.channel.send(`${messages.size-1} message from ${target}, has been deleted!`);
       });
     } else {
-      await interaction.channel.bulkDelete(number, true).then((messages) => {
-        interaction.channel.send(`${messages.size} messages have been successfully deleted!`);
+      interaction.channel.bulkDelete(number+1, true).then((messages) => {
+        interaction.channel.send(`${messages.size-1} messages have been successfully deleted!`);
       });
     }
   },
