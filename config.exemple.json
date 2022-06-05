@@ -3,23 +3,24 @@
   "embed": {
     "color": "#4D6FFF"
   },
-  "channelMessagejoin": "",
-  "channelMessageleave": "",
+  "channelMessageJoin": "CHANNEL_ID",
+  "channelMessageLeave": "CHANNEL_ID",
   "roles": [
     {
-      "label": "Test role 1",
+      "label": "Role 1",
       "description": "Add role 1",
       "value": "ROLE_ID"
     },
     {
-      "label": "Test role 2",
+      "label": "Role 2",
       "description": "Add role 2",
       "value": "ROLE_ID_2"
     },
     {
-      "label": "Test role 2",
-      "description": "Add role 1",
+      "label": "Role 3",
+      "description": "Add role 3",
       "value": "ROLE_ID_3"
     }
-  ]
+  ],
+  "botStatusMessage": "the devs"
 }

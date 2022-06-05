@@ -33,7 +33,7 @@ client.on('guildMemberAdd', async (member) => {
   context.drawImage(avatar, 65, canvas.height / 2 - 250, 500, 500);
   const attachmentjoin = new MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
 
-  member.guild.channels.fetch(config.channelMessagejoin)
+  member.guild.channels.fetch(config.channelMessageJoin)
       .then((channel) => channel.send({ content: `Welcome to ${member.guild.name}, ${member.user}!`, files: [attachmentjoin] }) )
       .catch(console.error);
 });
