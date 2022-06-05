@@ -44,7 +44,7 @@ module.exports = {
         .setTitle(`Help command: ${pull.name}`)
         .setDescription(`
         **Description:** ${pull.description ? pull.description : contextDescription[`${pull.name}`]} 
-        **Reminder:** `[]` (required option) and `<>` (optional) should not be included in your commands.`)
+        **Reminder:** \`[]\` (required option) and \`<>\` (optional) should not be included in your commands.`)
         .setThumbnail()
         .addFields(
             { name: 'Category', value: `${pull.category}` },
