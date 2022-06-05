@@ -15,7 +15,7 @@ module.exports = {
       required: true,
     },
   ],
-  
+
   run: async (client, interaction, args) => {
     const role = interaction.options.getRole('role');
 
