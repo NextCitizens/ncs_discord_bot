@@ -4,7 +4,6 @@ const config = require('../../config.json');
 
 client.on('interactionCreate', async (interaction) => {
   if (interaction.isCommand()) {
-    await interaction.deferReply({ ephemeral: false }).catch(() => {});
 
     const cmd = client.slashCommands.get(interaction.commandName);
     if (!cmd) {
@@ -44,7 +43,6 @@ client.on('interactionCreate', async (interaction) => {
   }
 
   if (interaction.isContextMenu()) {
-    await interaction.deferReply({ ephemeral: false });
     const command = client.slashCommands.get(interaction.commandName);
     if (command) command.run(client, interaction);
   }

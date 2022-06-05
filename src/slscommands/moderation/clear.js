@@ -25,7 +25,7 @@ module.exports = {
 
   run: async (client, interaction, args) => {
     const number = interaction.options.getNumber('number');
-    if (number > 99 || number < 2) return interaction.editReply('Number must not exceed 100 and must not lower 0!');
+    if (number > 99 || number < 2) return interaction.reply('Number must not exceed 100 and must not lower 0!');
     const target = interaction.options.getMember('target');
 
     const messageToDelet = await interaction.channel.messages.fetch();
@@ -38,12 +38,12 @@ module.exports = {
           filterCibleMessages.push(msg); i++;
         }
       });
-      interaction.channel.bulkDelete(number+1, filterCibleMessages, true).then((messages) => {
-        interaction.channel.send(`${messages.size-1} message from ${target}, has been deleted!`);
+      interaction.channel.bulkDelete(number, filterCibleMessages, true).then((messages) => {
+        interaction.reply(`${messages.size} message from ${target}, has been deleted!`);
       });
     } else {
-      interaction.channel.bulkDelete(number+1, true).then((messages) => {
-        interaction.channel.send(`${messages.size-1} messages have been successfully deleted!`);
+      interaction.channel.bulkDelete(number, true).then((messages) => {
+        interaction.reply(`${messages.size} messages have been successfully deleted!`);
       });
     }
   },

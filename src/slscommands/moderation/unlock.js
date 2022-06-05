@@ -16,7 +16,7 @@ module.exports = {
   run: async (client, interaction, args) => {
     const role = interaction.options.getRole('role');
 
-    if (role.rawPosition > interaction.guild.me.roles.highest.rawPosition) return interaction.editReply('The bot cannot unlock the channel for this role!');
+    if (role.rawPosition > interaction.guild.me.roles.highest.rawPosition) return interaction.reply('The bot cannot unlock the channel for this role!');
 
     await interaction.channel.permissionOverwrites.edit(`${role.id}`, { SEND_MESSAGES: null });
 
@@ -24,6 +24,6 @@ module.exports = {
         .setColor('#2ECC71')
         .setDescription(`🔓 The channel has been unlocked for ${role}`);
 
-    await interaction.editReply({ embeds: [embed] });
+    await interaction.reply({ embeds: [embed] });
   },
 };
