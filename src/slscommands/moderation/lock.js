@@ -4,6 +4,8 @@ module.exports = {
   name: 'lock',
   description: 'Lock a channel for a role!',
   permissions: ['MANAGE_CHANNELS'],
+  usage: '/lock [role]',
+  exemples: ['/lock @role'],
   type: 1,
   options: [
     {

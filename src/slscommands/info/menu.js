@@ -3,6 +3,8 @@ module.exports = {
   name: 'menu',
   description: 'Command to pop the menu.',
   permissions: ['SEND_MESSAGES', 'MANAGE_MESSAGES'],
+  usage: '/menu',
+  exemples: ['/menu'],
 
   run: async (client, interaction, args, config) => {
 

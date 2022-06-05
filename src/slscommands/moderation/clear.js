@@ -3,8 +3,8 @@ module.exports = {
   category: 'moderation',
   description: 'To delete some messages in channels.',
   permissions: ['MANAGE_MESSAGES'],
-  usage: 'clear [number] <@user#1234>',
-  exemples: ['ban @user#1234 spamming'],
+  usage: '/clear [number] <@user#1234>',
+  exemples: ['/clear 10 @user#1234', 'clear 10'],
   type: 1,
   options: [
     {

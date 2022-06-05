@@ -4,6 +4,8 @@ module.exports = {
   name: 'mute',
   description: 'Mute a user for a duration with a reason!',
   permissions: ['MODERATE_MEMBERS'],
+  usage: '/mute [user] [reason]',
+  exemples: ['/mute @user#1234 spamming'],
   type: 1,
   options: [
     {

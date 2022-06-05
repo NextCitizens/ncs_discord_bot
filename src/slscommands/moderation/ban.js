@@ -3,6 +3,8 @@ module.exports = {
   name: 'ban',
   description: 'This command is to ban people.',
   permissions: ['BAN_MEMBERS'],
+  usage: '/ban [user] [reason]',
+  exemples: ['/ban @user#1234 spamming'],
   type: 1,
   options: [
     {

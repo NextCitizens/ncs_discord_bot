@@ -4,6 +4,8 @@ module.exports = {
   name: 'unlock',
   description: 'Unlock a channel for a role!',
   permissions: ['MANAGE_CHANNELS'],
+  usage: '/unlock [role]',
+  exemples: ['/unlock @role'],
   type: 1,
   options: [
     {

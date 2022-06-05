@@ -2,6 +2,8 @@ module.exports = {
   name: 'unmute',
   description: 'Unmute a user!',
   permissions: ['MODERATE_MEMBERS'],
+  usage: '/unmute [user]',
+  exemples: ['/unmute @user#1234'],
   type: 1,
   options: [
     {

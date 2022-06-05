@@ -2,6 +2,8 @@ module.exports = {
   name: 'kick',
   description: 'This command is to kick people.',
   permissions: ['KICK_MEMBERS'],
+  usage: '/kick [user] [reason]',
+  exemples: ['/kick @user#1234 spamming'],
   type: 1,
   options: [
     {
