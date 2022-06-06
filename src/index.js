@@ -1,6 +1,5 @@
 require('dotenv').config();
 const { Client, Collection } = require('discord.js');
-const fs = require('fs');
 const client = new Client({
   allowedMentions: {
     parse: ['roles', 'users'],
@@ -24,7 +23,6 @@ client.aliases = new Collection();
 client.events = new Collection();
 client.cooldowns = new Collection();
 client.slashCommands = new Collection();
-client.categories = fs.readdirSync('src/commands/');
 
 ['command_handler', 'event_handler', 'slash_handler'].forEach((handler) => {
   require(`./handlers/${handler}`)(client);
