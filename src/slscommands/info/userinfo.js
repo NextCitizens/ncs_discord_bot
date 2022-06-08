@@ -16,24 +16,23 @@ module.exports = {
   ],
 
   run: async (client, interaction, args) => {
-    const target = interaction.options.getMember('target');
-    const targetInfo = target ? interaction.options.getMember('target') : interaction.member;
+    const target = interaction.options.getMember('target') ?? interaction.member;
 
     const embed = new MessageEmbed()
-        .setAuthor({ name: `${targetInfo.user.username}`, iconURL: `${targetInfo.user.displayAvatarURL()}` })
-        .setTitle(`Information about ${targetInfo.displayName}:`)
+        .setAuthor({ name: `${target.user.username}`, iconURL: `${target.user.displayAvatarURL()}` })
+        .setTitle(`Information about ${target.displayName}:`)
         .setColor('BLUE')
-        .setThumbnail(`${targetInfo.user.displayAvatarURL()}`)
+        .setThumbnail(`${target.user.displayAvatarURL()}`)
         .addFields(
-            { name: '► Name:', value: `${targetInfo.user.tag}`, inline: true },
-            { name: '► ID:', value: `${targetInfo.id}`, inline: true },
-            { name: '► Nickname:', value: `${targetInfo.nickname ? targetInfo.nickname : '❌'}`, inline: true },
-            { name: '► Badges', value: `${targetInfo.user.flags.bitfield > 0 ? targetInfo.user.flags.toArray().join(', ') : '❌'}`, inline: true },
-            { name: '► Moderator', value: `${targetInfo.kickable ? '❌' : '✅'}`, inline: true },
-            { name: '► Bot', value: `${targetInfo.user.bot ? '✅' : '❌'}`, inline: true },
-            { name: '► Roles:', value: `${targetInfo.roles.cache.map((role) => role).join(', ').replace(', @everyone', ' ')}`, inline: false },
-            { name: '► Created at:', value: `<t:${parseInt(targetInfo.user.createdTimestamp / 1000)}:f> (<t:${parseInt(targetInfo.user.createdTimestamp / 1000)}:R>)`, inline: true },
-            { name: '► Joined at:', value: `<t:${parseInt(targetInfo.joinedTimestamp / 1000)}:f> (<t:${parseInt(targetInfo.joinedTimestamp / 1000)}:R>)`, inline: true },
+            { name: '► Name:', value: `${target.user.tag}`, inline: true },
+            { name: '► ID:', value: `${target.id}`, inline: true },
+            { name: '► Nickname:', value: `${target.nickname ? target.nickname : '❌'}`, inline: true },
+            { name: '► Badges', value: `${target.user.flags.bitfield > 0 ? target.user.flags.toArray().join(', ') : '❌'}`, inline: true },
+            { name: '► Moderator', value: `${target.kickable ? '❌' : '✅'}`, inline: true },
+            { name: '► Bot', value: `${target.user.bot ? '✅' : '❌'}`, inline: true },
+            { name: '► Roles:', value: `${target.roles.cache.map((role) => role).join(', ').replace(', @everyone', ' ')}`, inline: false },
+            { name: '► Created at:', value: `<t:${parseInt(target.user.createdTimestamp / 1000)}:f> (<t:${parseInt(target.user.createdTimestamp / 1000)}:R>)`, inline: true },
+            { name: '► Joined at:', value: `<t:${parseInt(target.joinedTimestamp / 1000)}:f> (<t:${parseInt(target.joinedTimestamp / 1000)}:R>)`, inline: true },
         )
         .setFooter({ text: `${client.user.username}`, iconURL: `${client.user.displayAvatarURL()}` });
     await interaction.reply({ embeds: [embed] });
